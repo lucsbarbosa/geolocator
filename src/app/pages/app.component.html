@@ -1,0 +1,16 @@
+<div class="container">
+  <header>
+    <h1>CepGeolocator</h1>
+    <p>Selecione dois locais para prosseguir</p>
+  </header>
+  <main>
+    <app-map (markersSelected)="handleMarkers($event)"></app-map>
+    <div class="row" *ngIf="markers" style="margin: 1.6rem 0">
+      <app-cards
+        *ngFor="let marker of markers"
+        [marker]="marker"
+        class="col-sm-6"
+      ></app-cards>
+    </div>
+  </main>
+</div>

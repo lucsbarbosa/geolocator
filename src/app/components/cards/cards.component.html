@@ -1,0 +1,59 @@
+<div class="cards">
+  <div class="card">
+    <img src="../../../assets/images/clouds.jpg" alt="" />
+    <div class="overlay">
+      <h2 class="card-title">
+        {{ cardInfo.country }} - {{ cardInfo.location }}
+      </h2>
+      <div class="weather-container">
+        <fa-icon [icon]="faCloudSun"></fa-icon>
+        <p class="card-text">{{ cardInfo.weather.climate }}</p>
+      </div>
+
+      <table width="80%">
+        <tr>
+          <td>
+            <div class="weather-info">
+              <fa-icon [icon]="faTemperatureHalf"></fa-icon>
+              <p class="card-text">
+                Temperatura: {{ cardInfo.weather.temperature | celsius }}
+              </p>
+            </div>
+          </td>
+          <td>
+            <div class="weather-info">
+              <fa-icon [icon]="faThermometer"></fa-icon>
+              <p class="card-text">
+                Sensação térmica: {{ cardInfo.weather.feels | celsius }}
+              </p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="weather-info">
+              <fa-icon [icon]="faDroplet"></fa-icon>
+              <p class="card-text">Umidade: {{ cardInfo.weather.humidity }}%</p>
+            </div>
+          </td>
+          <td>
+            <div class="weather-info">
+              <fa-icon [icon]="faWind"></fa-icon>
+              <p class="card-text">Vento: {{ cardInfo.weather.wind }} m/s</p>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="../../../assets/images/money.jpg" alt="" />
+    <div class="overlay">
+      <h2 class="card-title">Moeda local</h2>
+      <p class="card-text" style="font-size: 2.4rem;">
+        1 real equivale a {{ cardInfo.currency.value }}{{ cardInfo.currency.iso }}
+      </p>
+    </div>
+  </div>
+</div>

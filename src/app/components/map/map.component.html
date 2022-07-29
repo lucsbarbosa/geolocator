@@ -1,0 +1,12 @@
+<google-map
+  height="600px"
+  width="100%"
+  [zoom]="5"
+  (mapClick)="handleClick($event)"
+  [center]="{
+    lat: -23.556881830756943,
+    lng: -46.635566316448156
+  }"
+>
+  <map-marker *ngFor="let marker of markers" [position]="marker"></map-marker>
+</google-map>
